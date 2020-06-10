@@ -28,15 +28,6 @@
             <string>%NAME%</string>
             <key>display_name</key>
             <string>%NAME%</string>
-            <key>postinstall_script</key>
-            <string>#!/bin/bash
-echo "start baobab-pollen"
-while ! /usr/local/baobab-pollen/baobab-pollen
-do
-  sleep 1
-  echo "Restarting baobab-pollen..."
-done
-            </string>
             <key>unattended_install</key>
             <false/>
             <key>unattended_uninstall</key>
