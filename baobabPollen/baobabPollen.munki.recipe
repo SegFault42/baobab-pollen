@@ -48,7 +48,7 @@ else
     install -m 600 /dev/null $FILE
 fi
 
-/bin/cp /usr/local/baobab-pollen/ressources/baobab.pollen.plist
+/bin/cp /usr/local/baobab-pollen/ressources/baobab.pollen.plist /Library/LaunchDaemons
 
 /bin/rm -fr /usr/local/baobab-pollen/ressources
 
@@ -58,9 +58,11 @@ logger -s "finish post insatll baobab-pollen"
 </string>
             <key>preinstall_script</key>
             <string>#!/bin/bash
-logger -s "Unloading baobabPollen plist"
+logger -s "begin pre insatll baobab-pollen"
 
 launchctl unload /Library/LaunchDaemons/baobab.pollen.plist
+
+logger -s "finish pre insatll baobab-pollen"
 </string>
         </dict>
     </dict>
