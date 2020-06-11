@@ -11,7 +11,7 @@
         <key>NAME</key>
         <string>baobabPollen</string>
         <key>DOWNLOAD_URL</key>
-        <string>https://munki.kzn.21-school.ru/pkgs/baobab-pollen_1.0.pkg</string>
+        <string>https://munki.kzn.21-school.ru/pkgs/baobab-pollen_latest.pkg</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.0</string>
