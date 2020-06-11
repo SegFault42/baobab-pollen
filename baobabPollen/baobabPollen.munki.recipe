@@ -36,6 +36,32 @@
             <string>removepackages</string>
             <key>uninstallable</key>
             <true/>
+            <key>postinstall_script</key>
+            <string>#!bin/bash
+logger -s "begin post insatll baobab-pollen"
+
+FILE=/var/log/baobabPollen.log
+
+if [ -f "$FILE" ]; then
+    echo "$FILE exists."
+else
+    install -m 600 /dev/null $FILE
+fi
+
+/bin/cp /usr/local/baobab-pollen/ressources/baobab.pollen.plist
+
+/bin/rm -fr /usr/local/baobab-pollen/ressources
+
+launchctl load /Library/LaunchDaemons/baobab.pollen.plist
+
+logger -s "finish post insatll baobab-pollen"
+</string>
+            <key>preinstall_script</key>
+            <string>#!/bin/bash
+logger -s "Unloading baobabPollen plist"
+
+launchctl unload /Library/LaunchDaemons/baobab.pollen.plist
+</string>
         </dict>
     </dict>
     <key>MinimumVersion</key>
